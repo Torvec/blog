@@ -1,7 +1,36 @@
 ---
-const today = new Date();
+const today = new Date()
+
+const myLinks = [
+  { name: "Portfolio", url: "https://edward-vonschondorf.dev/" },
+  { name: "Github", url: "https://github.com/Torvec" },
+  { name: "Email", url: "mailto:me@edward-vonschondorf.dev" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/edward-vonschondorf/" },
+  { name: "BlueSky", url: "https://bsky.app/profile/edward-vonschondorf.dev" },
+  { name: "Mastodon", url: "https://mastodon.social/@edvonschondorf" },
+  { name: "YouTube", url: "https://www.youtube.com/@edward-vonschondorf-dev" }
+]
 ---
 
-<footer class="font-sans text-center py-16">
-	&copy; {today.getFullYear()} Edward Vonschondorf. All rights reserved.
+<footer class="lg:px-0 container mx-auto max-w-[60ch] space-y-2 px-2 py-16 text-center text-sm">
+  <ul class="flex flex-wrap justify-evenly gap-x-4 gap-y-1 md:justify-between">
+    {
+      myLinks.map((link) => (
+        <li>
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer external"
+            class="transition-opacity duration-300 ease-in-out hover:opacity-60"
+          >
+            {link.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="flex flex-col justify-center gap-1 sm:flex-row">
+    <span class="block">&copy; {today.getFullYear()} Edward Vonschondorf.</span>
+    <span class="block">All rights reserved.</span>
+  </div>
 </footer>
