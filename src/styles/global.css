@@ -57,6 +57,10 @@
   --font-geist-mono: "GeistMono", monospace;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: var(--font-poppins-sans);
 }
