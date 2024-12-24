@@ -1,5 +1,7 @@
 # My Blog
 
-Made with Astro. A minimalist and static rendered blog about --insert topics here--
+A minimalistic, statically rendered blog about the things I make and how I made them. 
+
+Made with Astro. 
 
 Under Development
