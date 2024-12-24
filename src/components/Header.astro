@@ -2,9 +2,11 @@
 import { SITE_TITLE } from "../consts"
 ---
 
-<header class="lg:px-0 container mx-auto flex max-w-[60ch] items-center justify-between px-2 py-16">
+<header
+  class="container mx-auto flex max-w-[60ch] items-center justify-between px-2 pb-4 pt-16 lg:px-0"
+>
   <a href="/" class="block font-medium transition-opacity duration-300 ease-in-out hover:opacity-60"
     >{SITE_TITLE}</a
   >
-  <button class="rounded-full border opacity-50 hover:opacity-100">🌙</button>
+  <button class="rounded-full border opacity-50 hover:opacity-100" disabled>🌙</button>
 </header>
