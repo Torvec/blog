@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap"
 
 import tailwind from "@astrojs/tailwind"
 
+import vue from "@astrojs/vue";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://blog.edward-vonschondorf.dev",
@@ -16,5 +18,5 @@ export default defineConfig({
       }
     }
   },
-  integrations: [mdx(), sitemap(), tailwind()]
+  integrations: [mdx(), sitemap(), tailwind(), vue()]
 })
