@@ -10,7 +10,7 @@ const posts = (await getCollection("blog")).sort(
 )
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={'Blog | ' + SITE_TITLE} description={SITE_DESCRIPTION}>
   <Intro />
   <ul class="space-y-4">
     {
@@ -20,7 +20,7 @@ const posts = (await getCollection("blog")).sort(
             <FormattedDate date={post.data.pubDate} />
           </span>
           <a
-            href={`/blog/${post.id}/`}
+            href={`/${post.id}/`}
             class="block transition-opacity duration-300 ease-in-out hover:opacity-60 md:w-5/6"
           >
             <h4 class="font-medium">{post.data.title}</h4>
