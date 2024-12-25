@@ -57,6 +57,19 @@
   --font-geist-mono: "GeistMono", monospace;
 }
 
+@layer base {
+  .light {
+    --background: 0, 0%, 96%; /* neutral-100 */
+    --foreground: 0, 0%, 9%; /* neutral-900 */
+    --accent: 201, 96%, 32%; /* Sky-700 */
+  }
+  .dark {
+    --background: 24, 10%, 10%; /* Stone-900 */
+    --foreground: 60, 5%, 96%; /* Stone-100 */
+    --accent: 25, 95%, 53%; /* Orange-500 */
+  }
+}
+
 html {
   scrollbar-gutter: stable;
 }
