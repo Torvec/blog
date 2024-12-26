@@ -1,6 +1,6 @@
 ---
 import Layout from "../components/layout.astro"
-import { SITE_TITLE } from "../consts"
+import { SITE_TITLE } from "../global_consts"
 import FormattedDate from "../components/formatted-date.astro"
 import { type CollectionEntry, getCollection } from "astro:content"
 import { render } from "astro:content"
@@ -39,6 +39,8 @@ const { Content } = await render(post)
     </div>
   </article>
   <div class="py-4">
-    <a href="/" class="transition-color duration-300 ease-in-out hover:text-accent text-muted">&lt; Back</a>
+    <a href="/" class="transition-color text-muted duration-300 ease-in-out hover:text-accent"
+      >&lt; Back</a
+    >
   </div>
 </Layout>

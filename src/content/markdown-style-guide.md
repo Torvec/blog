@@ -3,7 +3,7 @@ title: "Markdown Style Guide (FOR TESTING)"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 pubDate: "Jun 19 2024"
 updatedDate: "Jun 19 2024"
-heroImage: "/blog-placeholder-1.jpg"
+heroImage: "favicon.svg"
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
@@ -40,7 +40,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ### Output - h3
 
-![blog placeholder](/blog-placeholder-1.jpg)
+![blog placeholder](/favicon.svg)
 
 ## Blockquotes - h2
 
