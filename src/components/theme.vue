@@ -13,9 +13,9 @@ const toggleDark = useToggle(isDark)
 <template>
   <button
     @click="toggleDark()"
-    class="transition-opacity duration-300 ease-in-out hover:opacity-50"
+    class="flex items-center gap-2 transition-all duration-300 ease-in-out text-muted hover:text-accent hover:scale-110"
   >
-    <Moon v-if="!isDark" :size="16" />
-    <Sun v-if="isDark" :size="16" />
+    <Moon v-if="!isDark" :size="22" :stroke-width="1" />
+    <Sun v-if="isDark" :size="22" />
   </button>
 </template>

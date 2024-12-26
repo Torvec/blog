@@ -61,11 +61,15 @@
   .light {
     --background: 0, 0%, 96%; /* neutral-100 */
     --foreground: 0, 0%, 9%; /* neutral-900 */
+    --muted: 0, 0%, 64%; /* neutral-400 */
+    --muted-foreground: ;
     --accent: 201, 96%, 32%; /* Sky-700 */
   }
   .dark {
     --background: 24, 10%, 10%; /* Stone-900 */
-    --foreground: 60, 5%, 96%; /* Stone-100 */
+    --foreground: 20, 6%, 90%; /* Stone-200 */
+    --muted: 24, 5%, 64%; /* Stone-400 */
+    --muted-foreground: ;
     --accent: 25, 95%, 53%; /* Orange-500 */
   }
 }

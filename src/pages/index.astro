@@ -6,13 +6,15 @@ import { getCollection } from "astro:content"
 import FormattedDate from "../components/formatted-date.astro"
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 )
+
+const pagePathname = Astro.url.pathname
 ---
 
-<Layout title={'Blog | ' + SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={"Blog | " + SITE_TITLE} description={SITE_DESCRIPTION} pathname={pagePathname}>
   <Intro />
-  <ul class="space-y-4">
+  <ul class="space-y-6">
     {
       posts.map((post) => (
         <li class="flex flex-col items-baseline md:flex-row">
@@ -21,10 +23,11 @@ const posts = (await getCollection("blog")).sort(
           </span>
           <a
             href={`/${post.id}/`}
-            class="block transition-opacity duration-300 ease-in-out hover:opacity-60 md:w-5/6"
+            class="transition-color block duration-300 ease-in-out hover:text-accent md:w-5/6"
           >
-            <h4 class="font-medium">{post.data.title}</h4>
-            <span class="block text-xs">{post.data.description}</span>
+            <h3 transition:name={`${post.data.pubDate} header`} class="text-pretty font-medium">
+              {post.data.title}
+            </h3>
           </a>
         </li>
       ))

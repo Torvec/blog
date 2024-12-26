@@ -1,21 +1,63 @@
 ---
 import BaseHead from "../components/base-head.astro"
-import Header from "./header.astro"
-import Footer from "./footer.astro"
+import { SITE_TITLE, MY_LINKS } from "../consts"
+import Theme from "./theme.vue"
+import { ClientRouter } from "astro:transitions"
 
-const { title, description } = Astro.props
+const { title, description, pathname } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <ClientRouter />
   </head>
-  <body class="bg-background text-foreground flex min-h-screen flex-col antialiased">
-    <Header />
-    <main class="container mx-auto max-w-[60ch] flex-grow px-2 leading-relaxed lg:px-0">
+  <body class="flex min-h-screen flex-col bg-background text-foreground antialiased">
+    <!-- SITE HEADER -->
+    <header
+      class="container mx-auto flex max-w-2xl items-center justify-between px-2 pb-12 pt-20 lg:px-0"
+    >
+      {
+        pathname === "/" ? (
+          <span class="transition-color hover:text-muted block font-medium duration-300 ease-in-out">
+            {SITE_TITLE}
+          </span>
+        ) : (
+          <a
+            href="/"
+            class="hover:text-muted block font-medium text-accent transition-colors duration-300 ease-in-out"
+          >
+            {SITE_TITLE}
+          </a>
+        )
+      }
+      <Theme client:only="vue" />
+    </header>
+
+    <!-- SITE CONTENT -->
+    <main class="container mx-auto max-w-2xl flex-grow px-2 leading-relaxed lg:px-0">
       <slot />
     </main>
-    <Footer />
+
+    <!-- SITE FOOTER -->
+    <footer class="container mx-auto max-w-2xl space-y-2 px-2 py-16 text-center lg:px-0">
+      <ul class="flex flex-wrap justify-evenly gap-x-4 gap-y-1 text-sm md:justify-between">
+        {
+          MY_LINKS.map((link) => (
+            <li>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer external"
+                class="text-muted block transition-all duration-300 ease-in-out hover:scale-110 hover:text-accent"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </footer>
   </body>
 </html>
