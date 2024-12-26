@@ -1,7 +1,11 @@
 # My Blog
 
-A minimalistic, statically rendered blog about the things I make and how I made them. 
+A minimalistic, statically rendered blog about my work and the journey it took to create it.
 
-Made with Astro. 
+Made with Astro, Vue, and Tailwind CSS.
 
-Under Development
+## Contributing
+
+Find a typo? Link doesn't work? Something not factually correct? Please open an issue with the correction or create a pull request with the changes and I'll be sure to review it. 
+
+Any and all help is greatly appreciated!
