@@ -12,5 +12,6 @@ export const MY_LINKS = [
   { name: "LinkedIn", url: "https://www.linkedin.com/in/edward-vonschondorf/" },
   { name: "BlueSky", url: "https://bsky.app/profile/edward-vonschondorf.dev" },
   { name: "Mastodon", url: "https://mastodon.social/@edvonschondorf" },
-  { name: "YouTube", url: "https://www.youtube.com/@edward-vonschondorf-dev" }
+  { name: "YouTube", url: "https://www.youtube.com/@edward-vonschondorf-dev" },
+  { name: "Feed", url: "/rss.xml" }
 ]
