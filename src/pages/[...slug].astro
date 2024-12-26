@@ -1,5 +1,6 @@
 ---
 import Layout from "../components/layout.astro"
+import { SITE_TITLE } from "../consts"
 import FormattedDate from "../components/formatted-date.astro"
 import { type CollectionEntry, getCollection } from "astro:content"
 import { render } from "astro:content"
@@ -18,11 +19,11 @@ const { title, description, pubDate, updatedDate } = post.data
 const { Content } = await render(post)
 ---
 
-<Layout title={title} description={description}>
-  <article class="border-b pb-8">
-    <div class="mb-8 space-y-1 border-b pb-2">
-      <h1 class="font-medium">{title}</h1>
-      <div class="flex justify-between text-xs uppercase">
+<Layout title={title + " | " + SITE_TITLE} description={description}>
+  <article class="pb-8">
+    <div class="mb-12 space-y-1">
+      <h1 transition:name={`${post.data.pubDate} header`} class="font-medium">{title}</h1>
+      <div class="flex justify-between text-xs uppercase opacity-75">
         <FormattedDate date={pubDate} />
         {
           updatedDate && (
