@@ -41,8 +41,8 @@ const { title, description, pathname } = Astro.props
     </main>
 
     <!-- SITE FOOTER -->
-    <footer class="container mx-auto max-w-2xl space-y-2 px-2 py-16 text-center lg:px-0">
-      <ul class="flex flex-wrap justify-evenly gap-x-4 gap-y-1 text-sm md:justify-between">
+    <footer class="container mx-auto max-w-2xl space-y-2 px-2 pt-32 pb-16 md:text-center lg:px-0">
+      <ul class="flex flex-col md:flex-row md:flex-wrap gap-x-4 gap-y-2 text-sm md:justify-between">
         {
           MY_LINKS.map((link) => (
             <li>
@@ -50,7 +50,7 @@ const { title, description, pathname } = Astro.props
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer external"
-                class="text-muted block transition-all duration-300 ease-in-out hover:scale-110 hover:text-accent"
+                class="text-muted block transition-all duration-300 ease-in-out hover:scale-110 hover:text-accent w-max"
               >
                 {link.name}
               </a>

@@ -3,7 +3,7 @@ import { useDark, useToggle } from "@vueuse/core"
 import { Moon, Sun } from "lucide-vue-next"
 
 const isDark = useDark({
-  selector: "body",
+  selector: "html",
   valueDark: "dark",
   valueLight: "light"
 })
