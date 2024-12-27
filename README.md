@@ -1,6 +1,8 @@
 # My Blog
 
-A minimalistic, statically rendered blog about my work and the journey it took to create it.
+![My Blog Screenshot](./public/my_blog.jpg)
+
+A minimalistic, statically generated blog about my work and the journey it took to create it.
 
 Made with Astro, Vue, and Tailwind CSS.
 
