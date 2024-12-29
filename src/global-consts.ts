@@ -1,5 +1,7 @@
 export const SITE_TITLE = "Edward Vonschondorf"
 
+export const USERNAME = "Torvec"
+
 export const SITE_DESCRIPTION = "A place to share my work and the journey it took to create it."
 
 export const SITE_INTRO =
