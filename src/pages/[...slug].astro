@@ -1,7 +1,9 @@
 ---
 import Layout from "../components/layout.astro"
-import { SITE_TITLE } from "../global-consts"
+import { SITE_TITLE, ISSUE_TITLE, ISSUE_BODY } from "../global-consts"
 import FormattedDate from "../components/formatted-date.astro"
+import BackLink from "../components/back-link.vue"
+import IssuesLink from "../components/issues-link.vue"
 import { type CollectionEntry, getCollection } from "astro:content"
 import { render } from "astro:content"
 
@@ -12,26 +14,18 @@ export async function getStaticPaths() {
     props: post
   }))
 }
+
 type Props = CollectionEntry<"blog">
 
 const post = Astro.props
 const { title, description, pubDate, updatedDate } = post.data
+
+const issueTitle = `${title} ${ISSUE_TITLE}`
+const encodedTitle = encodeURIComponent(issueTitle)
+const encodedBody = encodeURIComponent(ISSUE_BODY)
+const issueURL = `https://github.com/Torvec/blog/issues/new?title=${encodedTitle}&body=${encodedBody}`
+
 const { Content } = await render(post)
-
-const issueTitle = `${title} Article Issue: YOUR ISSUE HERE`
-const issueBody = `What kind of Issue?
-
-- Select: Typo, Broken Link, Fact Check, Other
-
-**Description:**
-
-- Description Here
-
-**Proposed Fix:**
-
-- Proposed Fix Here`
-
-const issueURL = `https://github.com/Torvec/blog/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`
 ---
 
 <Layout title={title + " | " + SITE_TITLE} description={description}>
@@ -54,12 +48,7 @@ const issueURL = `https://github.com/Torvec/blog/issues/new?title=${encodeURICom
     </div>
   </article>
   <div class="flex justify-between py-4 text-muted">
-    <a href="/" class="transition-color duration-300 ease-in-out hover:text-accent">&lt; Back</a>
-    <a
-      href={issueURL}
-      target="_blank"
-      rel="external noopener noreferrer"
-      class="transition-color duration-300 ease-in-out hover:text-accent">Issues?</a
-    >
+    <BackLink />
+    <IssuesLink issueURL={issueURL} />
   </div>
 </Layout>

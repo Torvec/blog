@@ -17,3 +17,17 @@ export const MY_LINKS = [
   { name: "YouTube", url: "https://www.youtube.com/@edward-vonschondorf-dev" },
   { name: "Feed", url: "/rss.xml" }
 ]
+
+export const ISSUE_TITLE = "Article Issue: YOUR ISSUE HERE"
+
+export const ISSUE_BODY = `What kind of Issue?
+
+- Select: Typo, Broken Link, Fact Check, Other
+
+**Description:**
+
+- Description Here
+
+**Proposed Fix:**
+
+- Proposed Fix Here`
