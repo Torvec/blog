@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../components/base-head.astro"
-import { SITE_TITLE, MY_LINKS } from "../global-consts"
+import { SITE_TITLE, USERNAME, MY_LINKS } from "../global-consts"
+import Name from "./name.vue"
 import Theme from "./theme.vue"
 import { ClientRouter } from "astro:transitions"
 
@@ -18,31 +19,21 @@ const { title, description, pathname } = Astro.props
     <header
       class="container mx-auto flex max-w-2xl items-center justify-between px-2 pb-12 pt-20 lg:px-0"
     >
-      {
-        pathname === "/" ? (
-          <span class="transition-color hover:text-muted block font-medium duration-300 ease-in-out">
-            {SITE_TITLE}
-          </span>
-        ) : (
-          <a
-            href="/"
-            class="hover:text-muted block font-medium text-accent transition-colors duration-300 ease-in-out"
-          >
-            {SITE_TITLE}
-          </a>
-        )
-      }
+      <Name pathname={pathname} name={SITE_TITLE} username={USERNAME} client:only="vue" />
       <Theme client:only="vue" />
     </header>
 
     <!-- SITE CONTENT -->
-    <main class="container mx-auto max-w-2xl flex-grow px-2 leading-relaxed lg:px-0">
+    <main
+      transition:animate="slide"
+      class="container mx-auto max-w-2xl flex-grow px-2 leading-relaxed lg:px-0"
+    >
       <slot />
     </main>
 
     <!-- SITE FOOTER -->
-    <footer class="container mx-auto max-w-2xl space-y-2 px-2 pb-16 pt-32 md:text-center lg:px-0">
-      <ul class="flex flex-col gap-x-4 gap-y-2 text-sm md:flex-row md:flex-wrap md:justify-between">
+    <footer class="container mx-auto max-w-2xl space-y-2 px-2 pb-8 pt-32 md:text-center lg:px-0">
+      <ul class="flex flex-wrap justify-evenly gap-x-4 gap-y-2 text-sm md:justify-between">
         {
           MY_LINKS.map((link) => (
             <li>
@@ -50,7 +41,7 @@ const { title, description, pathname } = Astro.props
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer external"
-                class="text-muted block w-max transition-all duration-300 ease-in-out hover:text-accent"
+                class="block w-max text-muted transition-all duration-300 ease-in-out hover:text-accent"
               >
                 {link.name}
               </a>
