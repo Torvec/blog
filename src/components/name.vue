@@ -12,7 +12,7 @@ import { ArrowLeft } from "lucide-vue-next"
     v-if="pathname === '/'"
     class="group h-6 overflow-hidden font-medium transition-colors duration-1000 ease-in-out hover:text-muted"
   >
-    <span class="block transition-transform duration-300 ease-in-out group-hover:-translate-y-6">
+    <span class="block transition-transform duration-500 ease-in-out group-hover:-translate-y-6">
       <span class="block">{{ name }}</span>
       <span class="block">{{ username }}</span>
     </span>

@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 description: "The first post on my blog"
-pubDate: "Dec 26 2024"
+pubDate: "26 Dec 2024"
 # updatedDate: ""
 # heroImage: ""
 ---
