@@ -17,17 +17,14 @@ const pagePathname = Astro.url.pathname
     {
       posts.map((post) => (
         <li class="flex items-baseline gap-4">
-          <span class="block text-xs uppercase text-muted flex-shrink-0">
+          <span class="block min-w-20 flex-shrink-0 text-xs uppercase text-muted">
             <FormattedDate date={post.data.pubDate} />
           </span>
           <a
             href={`/${post.id}/`}
-            class="transition-color block duration-300 ease-in-out hover:text-accent flex-grow"
+            class="transition-color block flex-grow duration-300 ease-in-out hover:text-accent"
           >
-            <span class="text-pretty font-medium">
-              {post.data.title}
-            </span>
-
+            <span class="text-pretty font-medium">{post.data.title}</span>
           </a>
         </li>
       ))
