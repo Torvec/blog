@@ -1,3 +1,5 @@
+**ARCHIVED 11 MAY 2025: NO MORE PLANNED UPDATES OR POSTS**
+
 # My Blog
 
 ![My Blog Screenshot](./public/my-blog.jpg)
